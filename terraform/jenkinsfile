@@ -29,7 +29,7 @@ pipeline {
                 script {
                     withCredentials([azureServicePrincipal(credentialsId: 'c5106d38-2ef2-4268-90b7-bee494a51b2c', variable: 'c5106d38-2ef2-4268-90b7-bee494a51b2c')]) {
                         // Set Azure credentials
-                        // sh 'az login --service-principal -u $MY_CRED_CLIENT_ID -p $MY_CRED_CLIENT_SECRET -t $MY_CRED_TENANT_ID'
+                        sh 'az login --service-principal -u $MY_CRED_CLIENT_ID -p $MY_CRED_CLIENT_SECRET -t $MY_CRED_TENANT_ID'
                         sh 'export ARM_CLIENT_ID=$MY_CRED_CLIENT_ID'
                         sh 'export ARM_CLIENT_SECRET=$MY_CRED_CLIENT_SECRET'
                         sh 'export ARM_SUBSCRIPTION_ID=$MY_CRED_SUBSCRIPTION_ID'
